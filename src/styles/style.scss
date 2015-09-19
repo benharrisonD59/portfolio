@@ -1,0 +1,13 @@
+@import 'reset';
+@import 'bootstrap';
+
+$lightgrey: #d1d1d1;
+
+body {
+  background: $lightgrey;
+  margin: 11px;
+}
+.jumbotron {
+  margin: 11px;
+  padding: 48px;
+}
