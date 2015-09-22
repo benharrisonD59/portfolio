@@ -30,7 +30,7 @@ var files = ["jsx", "sass", "html"];
 
 function defineTasks() {
   // Pull in task definitions
-  files.forEach(function (file) {
+  files.forEach(function(file) {
     require("./gulp-tasks/" + file)(gulp, plugins, path);
   });
 
