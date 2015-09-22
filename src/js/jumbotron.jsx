@@ -1,7 +1,7 @@
-var React = require("react");
-var Jumbotron = require("react-bootstrap/lib/Jumbotron");
+var React = require( "react" );
+var Jumbotron = require( "react-bootstrap/lib/Jumbotron" );
 
-var Jibble = React.createClass({
+var Jibble = React.createClass( {
   render: function() {
     return (
       <Jumbotron>
@@ -10,6 +10,6 @@ var Jibble = React.createClass({
       </Jumbotron>
     );
   }
-});
+} );
 
 module.exports = Jibble;
