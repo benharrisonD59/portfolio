@@ -3,10 +3,19 @@
 
 body {
   background: url("./images/background.jpg");
-  margin: 11px;
 }
-
-.jumbotron {
-  margin: 11px;
-  padding: 48px;
+.sectionContainer {
+  height: 100vh;
+}
+.sectionPanel {
+    position: relative;
+    margin: auto;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background: red;
 }

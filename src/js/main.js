@@ -1,7 +1,16 @@
 var React = require( "react" );
-var Jumbotron = require( "./jumbotron.jsx" );
+var SectionPanel = require( "./sectionPanel.jsx" );
 
-React.render(
-  <Jumbotron / >,
-  document.getElementById( 'main' )
-);
+var App = React.createClass( {
+  render: function() {
+    return (
+      <div className="sectionContainer">
+        <SectionPanel />
+        <SectionPanel />
+        <SectionPanel />
+      </div>
+    );
+  }
+} );
+
+React.render( <App />, document.getElementById( 'main' ) );
