@@ -1,21 +1,29 @@
 @import 'reset';
 @import 'bootstrap';
-
 body {
   background: url("./images/background.jpg");
 }
+
 .sectionContainer {
   height: 100vh;
 }
+
 .sectionPanel {
-    position: relative;
-    margin: auto;
-    top: auto;
-    left: auto;
-    bottom: auto;
-    right: auto;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    background: red;
+  position: relative;
+  margin: auto;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background: red;
+  text-align: center;
+  color: black;
+  font-size: 5em;
+}
+
+#one {
+  background: blue;
+}
+
+#three {
+  background: green;
 }
