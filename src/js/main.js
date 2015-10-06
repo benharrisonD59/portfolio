@@ -16,7 +16,7 @@ var App = React.createClass( {
     // Scene Handler
     var scene1 = new ScrollMagic.Scene( {
         triggerElement: "#one", // point of execution
-        duration: window.innerHeight - 200, // pin element for the window height - 1
+        duration: window.innerHeight, // pin element for the window height - 1
         triggerHook: 0, // don't trigger until #pinned-trigger1 hits the top of the viewport
         reverse: true // allows the effect to trigger when scrolled in the reverse direction
       } )
@@ -46,6 +46,46 @@ var App = React.createClass( {
       } )
       .setPin( "#innerfour" ) // the element we want to pin
       .addTo( controller );
+    var scene5 = new ScrollMagic.Scene( {
+        triggerElement: "#two",
+        duration: 0,
+        triggerHook: -50,
+        reverse: true
+      } )
+      .setClassToggle( '#hhU, #hhP, #hhC, #hhA', 'showing' )
+      .addTo( controller );
+    var scene6 = new ScrollMagic.Scene( {
+        triggerElement: "#two",
+        duration: 0,
+        triggerHook: -50,
+        reverse: true
+      } )
+      .setClassToggle( '#hhU', 'orange' )
+      .addTo( controller );
+    var scene7 = new ScrollMagic.Scene( {
+        triggerElement: "#three",
+        duration: 0,
+        triggerHook: -50,
+        reverse: true
+      } )
+      .setClassToggle( '#hhP', 'orange' )
+      .addTo( controller );
+    var scene8 = new ScrollMagic.Scene( {
+        triggerElement: "#four",
+        duration: 0,
+        triggerHook: -50,
+        reverse: true
+      } )
+      .setClassToggle( '#hhC', 'orange' )
+      .addTo( controller );
+    var scene9 = new ScrollMagic.Scene( {
+        triggerElement: "#five",
+        duration: 0,
+        triggerHook: -50,
+        reverse: true
+      } )
+      .setClassToggle( '#hhA', 'orange' )
+      .addTo( controller );
   },
 
   render: function() {
@@ -53,11 +93,11 @@ var App = React.createClass( {
       <div className="app">
         <Heading />
         <div className="panelContainer">
-          <IntroPanel childId="one" />
-          <BioPanel childId="two" />
-          <PhotoPanel childId="three" />
-          <CodePanel childId="four" />
-          <BlogPanel childId="five" />
+          <IntroPanel childId="one" zIndex="1" />
+          <BioPanel childId="two" zIndex="2" />
+          <PhotoPanel childId="three" zIndex="3" />
+          <CodePanel childId="four" zIndex="4" />
+          <BlogPanel childId="five" zIndex="5" />
         </div>
       </div>
     );
