@@ -7,12 +7,12 @@ var Panel = React.createClass( {
         <div id={"inner"+this.props.childId}>
           <section className="introContainer">
             <img src="./images/profile.jpg" alt="profile pic" className="profilePic" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est debitis odit quasi soluta aliquam ad praesentium cupiditate animi numquam veritatis, minima illo rerum doloremque aperiam eaque culpa mollitia eveniet quia.
+            </p>
           </section>
-          <section className="hexagonContainer">
-            <div className="hexagon"><p>Bio</p></div>
-            <div className="hexagon"><p>Photos</p></div>
-            <div className="hexagon"><p>Code</p></div>
-            <div className="hexagon"><p>Blog</p></div>
+          <section>
+
           </section>
         </div>
       </section>

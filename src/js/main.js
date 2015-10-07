@@ -12,6 +12,12 @@ var controller = new ScrollMagic.Controller();
 
 var App = React.createClass( {
 
+  getInitialState: function() {
+    return {
+      sectionName: "Intro"
+    };
+  },
+
   componentDidMount: function() {
     // Scene Handler
     var scene1 = new ScrollMagic.Scene( {
@@ -20,7 +26,7 @@ var App = React.createClass( {
         triggerHook: 0, // don't trigger until #pinned-trigger1 hits the top of the viewport
         reverse: true // allows the effect to trigger when scrolled in the reverse direction
       } )
-      .setPin( "#innerone" ) // the element we want to pin
+      .setPin( "#innerone" )
       .addTo( controller );
     var scene2 = new ScrollMagic.Scene( {
         triggerElement: "#two", // point of execution
@@ -47,51 +53,56 @@ var App = React.createClass( {
       .setPin( "#innerfour" ) // the element we want to pin
       .addTo( controller );
     var scene5 = new ScrollMagic.Scene( {
-        triggerElement: "#two",
-        duration: 0,
-        triggerHook: -50,
+        triggerElement: "#one",
+        duration: window.innerHeight,
+        triggerHook: 0,
         reverse: true
       } )
-      .setClassToggle( '#hhU, #hhP, #hhC, #hhA', 'showing' )
+      .setClassToggle( '#hhH', 'orange' )
+      .on("progress", function(){this.setState({sectionName: "Intro"});}.bind(this))
       .addTo( controller );
     var scene6 = new ScrollMagic.Scene( {
         triggerElement: "#two",
-        duration: 0,
-        triggerHook: -50,
+        duration: window.innerHeight,
+        triggerHook: 0,
         reverse: true
       } )
       .setClassToggle( '#hhU', 'orange' )
+      .on("progress", function(){this.setState({sectionName: "Bio"});}.bind(this))
       .addTo( controller );
     var scene7 = new ScrollMagic.Scene( {
         triggerElement: "#three",
-        duration: 0,
-        triggerHook: -50,
+        duration: window.innerHeight,
+        triggerHook: 0,
         reverse: true
       } )
       .setClassToggle( '#hhP', 'orange' )
+      .on("progress", function(){this.setState({sectionName: "Photography"});}.bind(this))
       .addTo( controller );
     var scene8 = new ScrollMagic.Scene( {
         triggerElement: "#four",
-        duration: 0,
-        triggerHook: -50,
+        duration: window.innerHeight,
+        triggerHook: 0,
         reverse: true
       } )
       .setClassToggle( '#hhC', 'orange' )
+      .on("progress", function(){this.setState({sectionName: "Programming"});}.bind(this))
       .addTo( controller );
     var scene9 = new ScrollMagic.Scene( {
         triggerElement: "#five",
-        duration: 0,
-        triggerHook: -50,
+        duration: window.innerHeight,
+        triggerHook: 0,
         reverse: true
       } )
       .setClassToggle( '#hhA', 'orange' )
+      .on("progress", function(){this.setState({sectionName: "Articles"});}.bind(this))
       .addTo( controller );
   },
 
   render: function() {
     return (
       <div className="app">
-        <Heading />
+        <Heading sectionName={this.state.sectionName} />
         <div className="panelContainer">
           <IntroPanel childId="one" zIndex="1" />
           <BioPanel childId="two" zIndex="2" />
