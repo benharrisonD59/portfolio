@@ -6,13 +6,13 @@ var Heading = React.createClass( {
     return (
       <div className="heading">
         <section id="headerHexagons" className="hexagonContainerLittle">
-          <a href="#one"><div id="hhU" className="hexagonLittle"><Glyphicon glyph="user" /></div></a>
-          <a href="#two"><div id="hhP" className="hexagonLittle"><Glyphicon glyph="camera" /></div></a>
-          <a href="#three"><div id="hhC" className="hexagonLittle"><Glyphicon glyph="hdd" /></div></a>
-          <a href="#four"><div id="hhA" className="hexagonLittle"><Glyphicon glyph="align-left" /></div></a>
+          <a href="#two"><div id="hhU" className="hexagonLittle"><Glyphicon glyph="user" /></div></a>
+          <a href="#three"><div id="hhP" className="hexagonLittle"><Glyphicon glyph="camera" /></div></a>
+          <a href="#four"><div id="hhC" className="hexagonLittle"><Glyphicon glyph="hdd" /></div></a>
+          <a href="#five"><div id="hhA" className="hexagonLittle"><Glyphicon glyph="align-left" /></div></a>
         </section>
         <section>
-          <h1>HEADER</h1>
+          <h1>Benjamin R Harrison</h1>
         </section>
         <section>
 

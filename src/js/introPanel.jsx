@@ -5,12 +5,14 @@ var Panel = React.createClass( {
     return (
       <section id={this.props.childId} className="panelSegment" style={{zIndex: this.props.zIndex}}>
         <div id={"inner"+this.props.childId}>
-        <p>{this.props.childId}</p>
+          <section className="introContainer">
+            <img src="./images/profile.jpg" alt="profile pic" className="profilePic" />
+          </section>
           <section className="hexagonContainer">
             <div className="hexagon"><p>Bio</p></div>
-            <div className="hexagon"><p>Photography</p></div>
-            <div className="hexagon"><p>Programming</p></div>
-            <div className="hexagon"><p>Articles</p></div>
+            <div className="hexagon"><p>Photos</p></div>
+            <div className="hexagon"><p>Code</p></div>
+            <div className="hexagon"><p>Blog</p></div>
           </section>
         </div>
       </section>
