@@ -1,0 +1,127 @@
+$hexWidth: 5.8vh;
+.heading {
+  position: fixed;
+  display: flex;
+  font-family: "Ethon", sans-serif;
+  box-shadow: 0px 0px 20px black;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3px;
+  width: 100%;
+  text-align: center;
+  z-index: 99;
+  margin: 0;
+  height: 10vh;
+  background-color: rgba(120, 120, 120, 0.4);
+  #headerHexagons {
+    min-width: 400px;
+    span {
+      font-size: $hexWidth * 0.45;
+      z-index: 2;
+      margin: 0.25vh 0 0 -0.2vh;
+      transform: rotate(-30deg);
+    }
+  }
+  #title {
+    min-width: 400px;
+    h1 {
+      font-weight: 900;
+      font-size: 5vh;
+      padding: 0;
+    }
+  }
+  #pageName {
+    min-width: 400px;
+    h2 {
+      font-weight: 900;
+      font-size: 4vh;
+      padding: 0;
+    }
+  }
+}
+
+.hexagonLittle {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transform: rotate(30deg);
+  width: $hexWidth;
+  height: $hexWidth * 0.57;
+  margin: $hexWidth * 0.28 $hexWidth * 0.33;
+  border-left: solid $hexWidth * 0.08 #333333;
+  border-right: solid $hexWidth * 0.08 #333333;
+}
+
+.hexagonLittle:before,
+.hexagonLittle:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: $hexWidth * 0.7;
+  height: $hexWidth * 0.7;
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: $hexWidth * 0.07;
+}
+
+.hexagonLittle:before {
+  top: $hexWidth * -0.35;
+  border-top: solid $hexWidth * 0.11 #333333;
+  border-right: solid $hexWidth * 0.11 #333333;
+}
+
+.hexagonLittle:after {
+  bottom: $hexWidth * -0.35;
+  border-bottom: solid $hexWidth * 0.11 #333333;
+  border-left: solid $hexWidth * 0.11 #333333;
+}
+
+@mixin hexTile {
+  background: orange;
+  transition: background 0.3s linear !important;
+}
+
+.viewing-page-1 {
+  #head {
+    background: #8FB59C;
+    #hhH {
+      @include hexTile;
+    }
+  }
+}
+
+.viewing-page-2 {
+  #head {
+    background: #8B7CBE;
+    #hhU {
+      @include hexTile;
+    }
+  }
+}
+
+.viewing-page-3 {
+  #head {
+    background: #DEC363;
+    #hhP {
+      @include hexTile;
+    }
+  }
+}
+
+.viewing-page-4 {
+  #head {
+    background: #79AFD1;
+    #hhC {
+      @include hexTile;
+    }
+  }
+}
+
+.viewing-page-5 {
+  #head {
+    background: #D992A2;
+    #hhA {
+      @include hexTile;
+    }
+  }
+}

@@ -1,26 +1,31 @@
-var React = require( "react" );
-var Glyphicon = require( "react-bootstrap/lib/Glyphicon" );
+var React = require("react");
+var Glyphicon = require("react-bootstrap/lib/Glyphicon");
 
-var Heading = React.createClass( {
+var Heading = React.createClass({
+
+  handleHexClick: function(moveToWhere) {
+    moveTo('.panelContainer', moveToWhere);
+  },
+
   render: function() {
     return (
-      <div className="heading">
-        <section id="headerHexagons" className="hexagonContainerLittle">
-          <a href="#one"><div id="hhH" className="hexagonLittle"><Glyphicon glyph="home" /></div></a>
-          <a href="#two"><div id="hhU" className="hexagonLittle"><Glyphicon glyph="user" /></div></a>
-          <a href="#three"><div id="hhP" className="hexagonLittle"><Glyphicon glyph="camera" /></div></a>
-          <a href="#four"><div id="hhC" className="hexagonLittle"><Glyphicon glyph="hdd" /></div></a>
-          <a href="#five"><div id="hhA" className="hexagonLittle"><Glyphicon glyph="align-left" /></div></a>
-        </section>
-        <section>
+      <div id="head" className="heading">
+        <div id="headerHexagons" className="hexagonContainerLittle">
+          <div id="hhH" className="hexagonLittle" onClick={this.handleHexClick.bind(this, 1)}><Glyphicon glyph="home" /></div>
+          <div id="hhU" className="hexagonLittle" onClick={this.handleHexClick.bind(this, 2)}><Glyphicon glyph="user" /></div>
+          <div id="hhP" className="hexagonLittle" onClick={this.handleHexClick.bind(this, 3)}><Glyphicon glyph="camera" /></div>
+          <div id="hhC" className="hexagonLittle" onClick={this.handleHexClick.bind(this, 4)}><Glyphicon glyph="hdd" /></div>
+          <div id="hhA" className="hexagonLittle" onClick={this.handleHexClick.bind(this, 5)}><Glyphicon glyph="align-left" /></div>
+        </div>
+        <div id="title">
           <h1>Benjamin R Harrison</h1>
-        </section>
-        <section>
+        </div>
+        <div id="pageName">
           <h2>{this.props.sectionName}</h2>
-        </section>
+        </div>
       </div>
     );
   }
-} );
+});
 
 module.exports = Heading;

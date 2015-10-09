@@ -1,157 +1,75 @@
-  @import 'reset';
-  @import 'bootstrap';
-  @font-face {
-    font-family: Ethon;
-    src: url('./fonts/Ethon.ttf');
-  }
+@import 'reset';
+@import 'bootstrap';
+@import 'onepagescroll';
+@import 'header';
+@font-face {
+  font-family: Ethon;
+  src: url('./fonts/Ethon.ttf');
+}
 
-  .heading {
-    position: fixed;
-    display: flex;
-    font-family: "Ethon", sans-serif;
-    box-shadow: 0px 0px 20px black;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 3px;
-    width: 100%;
-    text-align: center;
-    z-index: 99;
-    margin: 0;
-    min-height: 50px;
-    background-color: rgba(120, 120, 120, 0.4);
-    section {
-      min-width: 400px;
-      h1 {
-        font-weight: 900;
-        font-size: 52px;
-        padding: 0;
-      }
-      h2 {
-        font-weight: 900;
-        font-size: 48px;
-        padding: 0;
-      }
-      span {
-        font-size: x-large;
-        z-index: 2;
-        margin: 3px 0 0 -2px;
-        transform: rotate(-30deg);
-      }
-    }
+.introContainer {
+  padding-top: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    padding: 10px 50px;
+    color: whitesmoke;
+    max-width: 750px;
+    max-height: 250px;
+    font-size: 40%;
   }
+  img {
+    width: 250px;
+    height: 250px;
+    border: 7px solid whitesmoke;
+    border-radius: 125px;
+  }
+}
 
-  .introContainer {
-    padding-top: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    p {
-      padding: 10px 50px;
-      color: whitesmoke;
-      max-width: 670px;
-      max-height: 200px;
-      font-size: 40%;
-    }
-    img {
-      width: 200px;
-      height: 200px;
-      border: 7px solid whitesmoke;
-      border-radius: 100px;
-    }
-  }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
+.panelContainer {
+  height: 100vh;
+}
 
-  .panelContainer {
-    height: 100vh;
-  }
+.panelSegment {
+  position: relative;
+  margin: auto;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: black;
+  font-size: 5em;
+}
 
-  .panelSegment {
-    position: relative;
-    padding-top: 90px;
-    margin: auto;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    color: black;
-    font-size: 5em;
-  }
+#inner1 {
+  height: 100%;
+  padding-top: 10vh;
+  background-size: cover !important;
+  background: url("./images/bg1.jpg");
+}
 
-  #one {
-    background: #8B7CBE;
-  }
+#inner2 {
+  @extend #inner1;
+  background: url("./images/bg2.jpg");
+}
 
-  #innerone {
-    height: 100%;
-    background-size: cover !important;
-    background: url("./images/bg1.jpg");
-  }
+#inner3 {
+  @extend #inner1;
+  background: url("./images/bg3.jpg");
+}
 
-  #two {
-    background: #8FB59C;
-  }
+#inner4 {
+  @extend #inner1;
+  background: url("./images/bg4.jpg");
+}
 
-  #three {
-    background: #DEC363;
-  }
-
-  #four {
-    background: #D992A2;
-  }
-
-  #five {
-    background: #79AFD1;
-  }
-
-  .hexagonLittle {
-    position: relative;
-    display: inline-block;
-    transform: rotate(30deg);
-    width: 60px;
-    height: 34.64px;
-    margin: 17.32px 20px;
-    border-left: solid 5px #333333;
-    border-right: solid 5px #333333;
-  }
-
-  .hexagonLittle:before,
-  .hexagonLittle:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    width: 42.43px;
-    height: 42.43px;
-    transform: scaleY(0.5774) rotate(-45deg);
-    background-color: inherit;
-    left: 3.7868px;
-  }
-
-  .hexagonLittle:before {
-    top: -21.2132px;
-    border-top: solid 7.0711px #333333;
-    border-right: solid 7.0711px #333333;
-  }
-
-  .hexagonLittle:after {
-    bottom: -21.2132px;
-    border-bottom: solid 7.0711px #333333;
-    border-left: solid 7.0711px #333333;
-  }
-
-  #hhH,
-  #hhU,
-  #hhP,
-  #hhC,
-  #hhA {
-    transition: transform 0s linear;
-  }
-
-  .orange {
-    background: orange;
-    transform: rotate(390deg);
-    transition: transform 0.4s linear !important;
-  }
+#inner5 {
+  @extend #inner1;
+  background: url("./images/bg5.jpg");
+}
