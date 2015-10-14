@@ -78,19 +78,24 @@ a {
   background: url("./images/bg2.jpg");
   display: flex;
   justify-content: center;
+  align-items: center;
   .gistSegment {
-    background-color: rgba(255, 255, 240, 0.75);;
+    background-color: rgba(255, 255, 240, 0.75);
+    display: table;
     width: 20vw;
     margin: 3vh 1.5vw 8vh 1.5vw;
     padding: 15px;
     box-shadow: 0 0 25px black;
     h2 {
       font-family: "Ethon", sans-serif;
-      font-size: 4vh;
+      font-size: 3vh;
       font-weight: 600;
       text-shadow: 0 0 5px ivory;
       padding: 10px;
       border-bottom: 1px solid black;
+    }
+    p {
+      font-size: 2.5rem;
     }
   }
 }
@@ -144,9 +149,53 @@ a {
 #inner4 {
   @extend #inner1;
   background: url("./images/bg4.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .gistSegment {
+    background-color: rgba(255, 255, 240, 0.75);
+    display: table;
+    width: 20vw;
+    margin: 3vh 1.5vw 8vh 1.5vw;
+    padding: 15px;
+    box-shadow: 0 0 25px black;
+    h2 {
+      font-family: "Ethon", sans-serif;
+      font-size: 3vh;
+      font-weight: 600;
+      text-shadow: 0 0 5px ivory;
+      padding: 10px;
+      border-bottom: 1px solid black;
+    }
+    p {
+      font-size: 2.5rem;
+    }
+  }
 }
 
 #inner5 {
   @extend #inner1;
   background: url("./images/bg5.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .gistSegment {
+    background-color: rgba(255, 255, 240, 0.75);
+    display: table;
+    width: 20vw;
+    margin: 3vh 1.5vw 8vh 1.5vw;
+    padding: 15px;
+    box-shadow: 0 0 25px black;
+    h2 {
+      font-family: "Ethon", sans-serif;
+      font-size: 3vh;
+      font-weight: 600;
+      text-shadow: 0 0 5px ivory;
+      padding: 10px;
+      border-bottom: 1px solid black;
+    }
+    p {
+      font-size: 2.5rem;
+    }
+  }
 }

@@ -21,7 +21,7 @@ var App = React.createClass({
 
   componentDidMount: function() {
 
-    this.panelNames = ["Intro", "Bio", "Photography", "Programming", "Articles"];
+    this.panelNames = ["Intro", "Bio / RESUMé", "Photography", "Programming", "Articles"];
 
     OnePageScroll(".panelContainer", {
       sectionContainer: "section",

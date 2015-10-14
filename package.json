@@ -41,6 +41,7 @@
     "flux-react": "^2.6.6",
     "react": "^0.13.3",
     "react-bootstrap": "^0.25.2",
+    "react-marked": "^0.3.1",
     "superagent": "^1.4.0"
   }
 }

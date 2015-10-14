@@ -8,7 +8,7 @@ var Panel = React.createClass({
     return {
       gistKeys: [],
       gists: {},
-      url: "https://api.github.com/gists/bd24936e623ffeb404b2"
+      url: "https://api.github.com/gists/ff7e6061402fb17255a0"
     };
   },
 

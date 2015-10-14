@@ -8,7 +8,7 @@ var Panel = React.createClass({
     return {
       gistKeys: [],
       gists: {},
-      url: "https://api.github.com/gists/bd24936e623ffeb404b2"
+      url: "https://api.github.com/gists/60dde3a769a4f9ef8fc2"
     };
   },
 
@@ -25,7 +25,7 @@ var Panel = React.createClass({
 
   render: function() {
     return (
-      <section id={this.props.childId} className="panelSegment panel2" style={{zIndex: this.props.zIndex}}>
+      <section id={this.props.childId} className="panelSegment panel5" style={{zIndex: this.props.zIndex}}>
         <div id={"inner"+this.props.childId}>
           {this.state.gistKeys.map(function(key){
             return (<GistSegment file={this.state.gists[key]} />);
