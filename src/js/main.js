@@ -22,7 +22,7 @@ var App = React.createClass({
   componentDidMount: function() {
 
     this.panelNames = ["Intro", "Bio", "Photography", "Programming", "Articles"];
-    window.scroll = OnePageScroll;
+
     OnePageScroll(".panelContainer", {
       sectionContainer: "section",
       easing: "ease",
