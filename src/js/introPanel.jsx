@@ -8,7 +8,7 @@ var Panel = React.createClass({
           <div className="introContainer">
             <img src="./images/profile.jpg" alt="profile pic" className="profilePic" />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est debitis odit quasi soluta aliquam ad praesentium cupiditate animi numquam veritatis, minima illo rerum doloremque aperiam eaque culpa mollitia eveniet quia.
+              I always find introductions a little awkward. Especially since I have no idea who you nor do I know how much you know about me. Decidely to say that by end of browsing this site, you should know a great deal.
             </p>
           </div>
         </div>

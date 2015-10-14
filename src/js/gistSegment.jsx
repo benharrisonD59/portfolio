@@ -1,18 +1,18 @@
 var React = require("react");
-var Marked = require("react-marked");
+var Markdown = require('react-remarkable');
 
 var gistSegment = React.createClass({
 
   render: function() {
-    var fileName = this.props.file.filename;
-    fileName = fileName.replace(new RegExp('_', 'g'), " ");
-    fileName = fileName.replace(new RegExp('.md'), "");
-    var contents = Marked(this.props.file.content);
+    var fileName = this.props.file.filename
+      .replace(new RegExp('[0-9]'), "")
+      .replace(new RegExp('_', 'g'), " ")
+      .replace(new RegExp('.md'), "");
 
     return (
       <div className="gistSegment">
         <h2>{fileName}</h2>
-        <p>{contents}</p>
+        <Markdown source={this.props.file.content} />
       </div>
 
     );

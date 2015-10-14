@@ -88,14 +88,46 @@ a {
     box-shadow: 0 0 25px black;
     h2 {
       font-family: "Ethon", sans-serif;
-      font-size: 3vh;
+      font-size: 3rem;
       font-weight: 600;
       text-shadow: 0 0 5px ivory;
       padding: 10px;
       border-bottom: 1px solid black;
     }
-    p {
-      font-size: 2.5rem;
+    span {
+      text-align: left;
+      p {
+        font-family: "Ethon", sans-serif;
+        font-size: 2.5rem;
+        margin-left: 1.5rem;
+      }
+      ul {
+        margin-left: 1rem;
+        li p {
+          margin-left: 1.5rem;
+          margin-bottom: 0;
+          font-style: normal;
+          font-family: Arial;
+          font-size: 2rem;
+          color: black;
+          padding: 0 8px;
+          border-left: 1px solid #999;
+        }
+        ul {
+          margin-left: 1.5rem;
+          border-left: 1px solid #999;
+          li {
+            margin-left: 1.5rem;
+            margin-bottom: 0;
+            font-style: normal;
+            font-family: Arial;
+            font-size: 1.5rem;
+            color: black;
+            padding: 0 8px;
+            border-left: 1px solid #999;
+          }
+        }
+      }
     }
   }
 }
