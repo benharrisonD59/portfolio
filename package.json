@@ -38,9 +38,10 @@
     "watchify": "^3.4.0"
   },
   "dependencies": {
-    "flux-react": "^2.6.6",
-    "react": "^0.13.3",
-    "react-bootstrap": "^0.25.2",
+    "react": "^0.14.0",
+    "react-bootstrap": "^0.27.1",
+    "react-dom": "^0.14.0",
+    "react-fittext": "^0.1.1",
     "react-remarkable": "^1.1.1",
     "superagent": "^1.4.0"
   }

@@ -1,4 +1,5 @@
 var React = require("react");
+var ReactDOM = require("react-dom");
 var Heading = require("./heading.jsx");
 var IntroPanel = require("./introPanel.jsx");
 var BioPanel = require("./bioPanel.jsx");
@@ -61,4 +62,5 @@ var App = React.createClass({
     );
   }
 });
-React.render(<App />, document.body);
+
+ReactDOM.render(<App />, document.getElementById("reactEntryPoint"));

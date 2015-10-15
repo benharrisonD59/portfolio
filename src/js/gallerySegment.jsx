@@ -12,7 +12,7 @@ var gallerySegment = React.createClass({
           <Carousel>
             {this.props.photos.map(function(photo){
               return (
-                <CarouselItem>
+                <CarouselItem key={photo}>
                    <img src={photo}/>
                 </CarouselItem>
                 );

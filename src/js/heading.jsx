@@ -1,5 +1,6 @@
 var React = require("react");
 var Glyphicon = require("react-bootstrap/lib/Glyphicon");
+var FitText = require('react-fittext');
 
 var Heading = React.createClass({
 
@@ -18,7 +19,7 @@ var Heading = React.createClass({
           <div id="hhA" className="hexagonLittle" onClick={this.handleHexClick.bind(this, 5)}><Glyphicon glyph="align-left" /></div>
         </div>
         <div id="title">
-          <h1>Benjamin R Harrison</h1>
+            <h1>Benjamin R Harrison</h1>
         </div>
         <div id="pageName">
           <h2>{this.props.sectionName}</h2>

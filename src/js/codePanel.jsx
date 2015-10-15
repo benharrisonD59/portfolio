@@ -28,7 +28,7 @@ var Panel = React.createClass({
       <section id={this.props.childId} className="panelSegment panel4" style={{zIndex: this.props.zIndex}}>
         <div id={"inner"+this.props.childId}>
           {this.state.gistKeys.map(function(key){
-            return (<GistSegment file={this.state.gists[key]} />);
+            return (<GistSegment file={this.state.gists[key]} key={key}/>);
           }.bind(this))}
         </div>
       </section>
