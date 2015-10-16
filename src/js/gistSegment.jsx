@@ -1,5 +1,6 @@
 var React = require("react");
 var Markdown = require('react-remarkable');
+var FitText = require('react-fittext');
 
 var gistSegment = React.createClass({
 
@@ -11,10 +12,13 @@ var gistSegment = React.createClass({
 
     return (
       <div className="gistSegment">
-        <h2>{fileName}</h2>
-        <Markdown source={this.props.file.content} />
+        <FitText>
+          <h2>{fileName}</h2>
+        </FitText>
+        <FitText>
+          <Markdown source={this.props.file.content} />
+        </FitText>
       </div>
-
     );
   }
 

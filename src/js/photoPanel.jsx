@@ -43,8 +43,8 @@ var Panel = React.createClass({
 
   render: function() {
     return (
-      <section id={this.props.childId} className="panelSegment panel3" style={{zIndex: this.props.zIndex}}>
-        <div id={"inner"+this.props.childId}>
+      <section id={this.props.childId} className="panelSegment " style={{zIndex: this.props.zIndex}}>
+        <div id={"inner"+this.props.childId} className="photoPanel">
           <div className="iconSegment">
             <img src="./images/flickr.svg" alt=""/>
             <img src="./images/instagram.png" alt=""/>
