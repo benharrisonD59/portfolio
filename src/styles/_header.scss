@@ -1,4 +1,4 @@
-$hexWidth: 5.8vh;
+$hexWidth: 2.8vw;
 .heading {
   position: fixed;
   display: flex;
@@ -11,10 +11,10 @@ $hexWidth: 5.8vh;
   text-align: center;
   z-index: 99;
   margin: 0;
-  height: 10vh;
+  height: 8vh;
   background-color: rgba(120, 120, 120, 0.4);
   #headerHexagons {
-    min-width: 400px;
+    min-width: 30vw;
     span {
       font-size: $hexWidth * 0.45;
       z-index: 2;
@@ -23,18 +23,18 @@ $hexWidth: 5.8vh;
     }
   }
   #title {
-    min-width: 400px;
+    min-width: 30vw;
     h1 {
       font-weight: 900;
-      font-size: 5vh;
+      font-size: 2.4vw;
       padding: 0;
     }
   }
   #pageName {
-    min-width: 400px;
+    min-width: 30vw;
     h2 {
       font-weight: 900;
-      font-size: 4vh;
+      font-size: 2.2vw;
       padding: 0;
     }
   }

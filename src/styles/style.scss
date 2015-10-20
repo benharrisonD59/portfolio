@@ -40,84 +40,131 @@ a {
     max-height: 250px;
     padding: 10px 50px;
     color: whitesmoke;
+    text-shadow: 0 0 5px black;
   }
   img {
     width: 280px;
     height: 280px;
     border: 7px solid whitesmoke;
     border-radius: 140px;
+    box-shadow: 0 0 5px black;
   }
   .introVerbs {
     margin-top: -6em;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
     p {
-    display: inline-block;
-    padding: 0.6em;
-    font-family: 'Ethon', sans-serif;
-    border: 4px solid white;
-    margin: 1em;
-    width: 20%;
-    font-weight: 600;
-    text-shadow: 0 0 5px black;
-    box-shadow: 0 0 5px black;
-    font-size: 2.5em;
+      display: inline-block;
+      padding: 0.6em;
+      font-family: 'Ethon', sans-serif;
+      border: 4px solid white;
+      margin: 1em;
+      width: 20%;
+      font-weight: 600;
+      text-shadow: 0 0 5px black;
+      box-shadow: 0 0 5px black;
+      font-size: 2.5em;
+    }
+  }
+  @media screen and (max-width: 1150px) {
+    p {
+      display: none;
+    }
+    .introVerbs p {
+      width: 26%;
     }
   }
 }
 
 .bioPanel {
   background: url('./images/bg2.jpg');
+  flex-wrap: wrap;
+  .active {
+    color: orange;
+  }
   @extend #innerSection;
-  .gistSegment {
-    display: table;
-    width: 20vw;
-    margin: 3vh 1.5vw 8vh 1.5vw;
+  .bioCard {
+    width: 100%;
+    display: flex;
+    height: 94%;
+    margin: 3vh 3vw;
     padding: 15px;
-    background-color: rgba(255, 255, 240, .75);
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 3px solid white;
     box-shadow: 0 0 25px black;
-    h2 {
-      font-family: 'Ethon', sans-serif;
-      font-weight: 600;
-      padding: 10px;
-      border-bottom: 1px solid black;
-      text-shadow: 0 0 5px ivory;
-    }
-    span {
-      font-size: 1em;
-      text-align: left;
+    text-align: left;
+    align-items: center;
+    .contentsTable {
+      width: 20%;
+      color: white;
+      border-right: 1px solid white;
+      .orange {
+        color: orange;
+      }
       h2 {
         font-family: 'Ethon', sans-serif;
-        font-size: .75em;
+        font-size: 1.5vw;
         margin-left: 1.5rem;
-        border: none;
-      }
-      p {
-        font-size: .65em;
+        font-weight: 600;
+        margin-bottom: 0.8em;
+        padding-bottom: 0.3em;
+        border-bottom: 1px solid white;
+        text-shadow: 0 0 3px black;
+        display: block;
       }
       ul {
-        font-size: .85em;
+        font-size: 1.1vw;
         margin-left: 1rem;
+        li {
+          cursor: pointer;
+        }
         li p {
-          font-family: Arial;
+          font-family: 'Ethon', sans-serif;
           font-style: normal;
           margin-bottom: 0;
           margin-left: 1.5rem;
           padding: 0 8px;
-          color: black;
-          border-left: 1px solid #999;
+          color: white;
+          text-shadow: 0 0 3px black;
         }
-        ul {
-          font-size: .65em;
-          margin-left: 1.5rem;
-          border-left: 1px solid #999;
-          li {
-            font-family: Arial;
-            font-style: normal;
-            margin-bottom: 0;
-            margin-left: 1.5rem;
-            padding: 0 8px;
-            color: black;
-            border-left: 1px solid #999;
+      }
+    }
+    .contentArea {
+      width: 80%;
+      height: 100%;
+      margin-left: 1vw;
+      h3 {
+        font-family: 'Ethon', sans-serif;
+        font-weight: 600;
+        text-shadow: 0 0 3px black;
+        font-size: 1.5vw;
+        width: 80%;
+        color: white;
+        margin-left: 0.625%;
+        margin-top: 1.5%;
+        padding-bottom: 0.3em;
+        display: block;
+      }
+      .resumeArea {
+        width: 100%;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .resumeSection {
+          width: 48%;
+          border: 1px solid white;
+          box-shadow: 0 0 5px black;
+          margin: 0.625%;
+          padding: 1%;
+          h4 {
+            font-family: 'Ethon', sans-serif;
+            font-weight: 600;
+            text-shadow: 0 0 3px black;
+            font-size: 1.3vw;
+          }
+          p {
+            font-size: 0.9vw;
           }
         }
       }

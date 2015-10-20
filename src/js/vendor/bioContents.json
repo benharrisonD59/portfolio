@@ -1,0 +1,109 @@
+{
+  contentsTable: [
+  {
+    title: "Workplace Experience",
+    sub: [
+      "George Mason University", "Pretty Instant", "ALSAC St Jude"
+    ]
+  },
+  {
+    title: "Independent Work",
+    sub: [
+      "Flixstillery", "Sapiens Muse", "BitsToChange"
+    ]
+  },
+  {
+    title: "Favorite Tech",
+    sub: [
+      "HTML5, CSS3, Javascript(ES5/6)", "ReactJS, Flux, JSX, Radium", "RequireJS, Underscore, Gulp"
+    ]
+  }],
+  contents: {
+    GeorgeMasonUniversity: [
+    {
+      title: "IT Coordinator",
+      contents: [
+        "Appointed to the newly founded GMU Technology Leadership Council due to my verbal communication skill, leadership, public speaking and ease of adapting to new technological environments.",
+        "Designed and implemented a full-stack custom data dashboard solution using NodeJS, AngularJS, D3JS, HTML5, CCS3, SASS, Gulp, and Google Sheet API.",
+        "Administered our CSM system called ARMS utilizing HTML, CSS, JavaScript, SQL, JSON, and XML.",
+        "Worked with the Sacramento Kings, Bitpay, and the Mercator Market Analyst Group to create a Bitcoin/Altcoin strategy and pool our knowledge to create a roadmap for the future."
+      ]
+    },
+    {
+      title: "Systems Technician",
+      contents: [
+        "Lead the early effort to rewrite the library website, making early design choices and making structured roadmaps along with learning proprietary library database systems.",
+        "Served on the library staff council and used my advanced diplomatic, leadership and motivation for new skills and expertise to help manage new website initiatives and AV install recommendations.",
+        "Provided scheduled employee training workshops along with ad-hoc training and custom documentation utilizing my honed written and oral communication skills.",
+        "Worked closely with ITU Networking and other technical groups across mason to diagnose and pinpoint reoccurring faults."
+      ]
+    },
+    {
+      title: "A/V Night Technician",
+      contents: [
+        "Configured the Microsoft SharePoint IIS Server Website and MS SQL Database as to streamline data collection by outputting for our nightly closing routines, inventory needs and lab statistics.",
+        "Used Android SDK to create custom remote diagnostic tools to supplement current remote assistance tools.",
+        "Supervised our lower level technicians and trained them in the use and support of the A/V systems, Windows 7/XP, *NIX, Mac OSX, Android, IOS and Windows Phone and also proper rack mount building techniques.",
+      ]
+    }],
+    PrettyInstant: [
+    {
+      title: "Photographer",
+      contents: [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta natus illum recusandae voluptatum dolorem! Obcaecati, maxime in omnis, architecto molestias accusamus perspiciatis, sapiente, provident eos perferendis corrupti dolore consectetur repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum tenetur ipsam repellat! Atque officiis pariatur accusantium quod, corporis numquam assumenda tenetur suscipit, maxime modi sed possimus. Sit dolores tempora architecto. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores asperiores doloribus laudantium reiciendis, blanditiis odio animi veniam, provident perspiciatis eos, enim ut consequuntur laboriosam sint. Neque excepturi, dolorem ad. Tenetur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque delectus labore molestias ratione assumenda saepe, quod distinctio blanditiis quo iste facilis eos adipisci, cum commodi ea minus quaerat quasi eveniet."
+      ]
+    },
+    {
+      title: "Event Specialist",
+      contents: [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta natus illum recusandae voluptatum dolorem! Obcaecati, maxime in omnis, architecto molestias accusamus perspiciatis, sapiente, provident eos perferendis corrupti dolore consectetur repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum tenetur ipsam repellat! Atque officiis pariatur accusantium quod, corporis numquam assumenda tenetur suscipit, maxime modi sed possimus. Sit dolores tempora architecto. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores asperiores doloribus laudantium reiciendis, blanditiis odio animi veniam, provident perspiciatis eos, enim ut consequuntur laboriosam sint. Neque excepturi, dolorem ad. Tenetur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque delectus labore molestias ratione assumenda saepe, quod distinctio blanditiis quo iste facilis eos adipisci, cum commodi ea minus quaerat quasi eveniet."
+      ]
+    }],
+    ALSACStJude: [
+    {
+      title: "Sharepoint Consultant",
+      contents: [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta natus illum recusandae voluptatum dolorem! Obcaecati, maxime in omnis, architecto molestias accusamus perspiciatis, sapiente, provident eos perferendis corrupti dolore consectetur repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum tenetur ipsam repellat! Atque officiis pariatur accusantium quod, corporis numquam assumenda tenetur suscipit, maxime modi sed possimus. Sit dolores tempora architecto. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores asperiores doloribus laudantium reiciendis, blanditiis odio animi veniam, provident perspiciatis eos, enim ut consequuntur laboriosam sint. Neque excepturi, dolorem ad. Tenetur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque delectus labore molestias ratione assumenda saepe, quod distinctio blanditiis quo iste facilis eos adipisci, cum commodi ea minus quaerat quasi eveniet."
+      ]
+    }],
+    Flixstillery: [
+    {
+      title: "Founder",
+      contents: [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta natus illum recusandae voluptatum dolorem! Obcaecati, maxime in omnis, architecto molestias accusamus perspiciatis, sapiente, provident eos perferendis corrupti dolore consectetur repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum tenetur ipsam repellat! Atque officiis pariatur accusantium quod, corporis numquam assumenda tenetur suscipit, maxime modi sed possimus. Sit dolores tempora architecto. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores asperiores doloribus laudantium reiciendis, blanditiis odio animi veniam, provident perspiciatis eos, enim ut consequuntur laboriosam sint. Neque excepturi, dolorem ad. Tenetur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque delectus labore molestias ratione assumenda saepe, quod distinctio blanditiis quo iste facilis eos adipisci, cum commodi ea minus quaerat quasi eveniet."
+      ]
+    },
+    {
+      title: "Front-end",
+      contents: [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta natus illum recusandae voluptatum dolorem! Obcaecati, maxime in omnis, architecto molestias accusamus perspiciatis, sapiente, provident eos perferendis corrupti dolore consectetur repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum tenetur ipsam repellat! Atque officiis pariatur accusantium quod, corporis numquam assumenda tenetur suscipit, maxime modi sed possimus. Sit dolores tempora architecto. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores asperiores doloribus laudantium reiciendis, blanditiis odio animi veniam, provident perspiciatis eos, enim ut consequuntur laboriosam sint. Neque excepturi, dolorem ad. Tenetur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque delectus labore molestias ratione assumenda saepe, quod distinctio blanditiis quo iste facilis eos adipisci, cum commodi ea minus quaerat quasi eveniet."
+      ]
+    }],
+    SapiensMuse: [
+    {
+      title: "Founder",
+      contents: [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta natus illum recusandae voluptatum dolorem! Obcaecati, maxime in omnis, architecto molestias accusamus perspiciatis, sapiente, provident eos perferendis corrupti dolore consectetur repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum tenetur ipsam repellat! Atque officiis pariatur accusantium quod, corporis numquam assumenda tenetur suscipit, maxime modi sed possimus. Sit dolores tempora architecto. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores asperiores doloribus laudantium reiciendis, blanditiis odio animi veniam, provident perspiciatis eos, enim ut consequuntur laboriosam sint. Neque excepturi, dolorem ad. Tenetur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque delectus labore molestias ratione assumenda saepe, quod distinctio blanditiis quo iste facilis eos adipisci, cum commodi ea minus quaerat quasi eveniet."
+      ]
+    },
+    {
+      title: "Front-end",
+      contents: [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta natus illum recusandae voluptatum dolorem! Obcaecati, maxime in omnis, architecto molestias accusamus perspiciatis, sapiente, provident eos perferendis corrupti dolore consectetur repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum tenetur ipsam repellat! Atque officiis pariatur accusantium quod, corporis numquam assumenda tenetur suscipit, maxime modi sed possimus. Sit dolores tempora architecto. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores asperiores doloribus laudantium reiciendis, blanditiis odio animi veniam, provident perspiciatis eos, enim ut consequuntur laboriosam sint. Neque excepturi, dolorem ad. Tenetur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque delectus labore molestias ratione assumenda saepe, quod distinctio blanditiis quo iste facilis eos adipisci, cum commodi ea minus quaerat quasi eveniet."
+      ]
+    }],
+    BitsToChange: [
+    {
+      title: "Founder",
+      contents: [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta natus illum recusandae voluptatum dolorem! Obcaecati, maxime in omnis, architecto molestias accusamus perspiciatis, sapiente, provident eos perferendis corrupti dolore consectetur repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum tenetur ipsam repellat! Atque officiis pariatur accusantium quod, corporis numquam assumenda tenetur suscipit, maxime modi sed possimus. Sit dolores tempora architecto. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores asperiores doloribus laudantium reiciendis, blanditiis odio animi veniam, provident perspiciatis eos, enim ut consequuntur laboriosam sint. Neque excepturi, dolorem ad. Tenetur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque delectus labore molestias ratione assumenda saepe, quod distinctio blanditiis quo iste facilis eos adipisci, cum commodi ea minus quaerat quasi eveniet."
+      ]
+    },
+    {
+      title: "Front-end",
+      contents: [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta natus illum recusandae voluptatum dolorem! Obcaecati, maxime in omnis, architecto molestias accusamus perspiciatis, sapiente, provident eos perferendis corrupti dolore consectetur repudiandae.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum tenetur ipsam repellat! Atque officiis pariatur accusantium quod, corporis numquam assumenda tenetur suscipit, maxime modi sed possimus. Sit dolores tempora architecto. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores asperiores doloribus laudantium reiciendis, blanditiis odio animi veniam, provident perspiciatis eos, enim ut consequuntur laboriosam sint. Neque excepturi, dolorem ad. Tenetur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque delectus labore molestias ratione assumenda saepe, quod distinctio blanditiis quo iste facilis eos adipisci, cum commodi ea minus quaerat quasi eveniet."
+      ]
+    }]
+  },
+}
