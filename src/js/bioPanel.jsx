@@ -1,5 +1,5 @@
 var React = require("react");
-var ResumeSegment = require("./resumeSegment.jsx");
+var InteractivePanelSegment = require("./interactivePanelSegment.jsx");
 var BioContents = require("./vendor/bioContents.json");
 
 var Panel = React.createClass({
@@ -15,7 +15,7 @@ var Panel = React.createClass({
     return (
       <section id={this.props.childId} className="panelSegment" style={{zIndex: this.props.zIndex}}>
         <div id={"inner"+this.props.childId} className="bioPanel">
-          <ResumeSegment contentsTable={this.state.contentsTable} contents={this.state.contents} />
+          <InteractivePanelSegment contentsTable={this.state.contentsTable} contents={this.state.contents} />
         </div>
       </section>
     );
