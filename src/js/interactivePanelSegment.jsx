@@ -28,10 +28,6 @@ var Panel = React.createClass({
     });
   },
 
-  componentDidMount: function() {
-    this.changeContents("George Mason University");
-  },
-
   changeContents: function(section) {
     this.setState({
       currentTitle: section,
