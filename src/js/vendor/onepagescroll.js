@@ -37,8 +37,7 @@ function onePageScroll(element, options) {
     topPos = 0,
     lastAnimation = 0,
     quietPeriod = 500,
-    paginationList = "",
-    mainContainer = document.querySelector("#app");
+    paginationList = "";
 
   var init = function() {
     /*-------------------------------------------*/
@@ -59,11 +58,11 @@ function onePageScroll(element, options) {
 
     _swipeEvents(el);
     document.addEventListener("swipeDown", function(event) {
-      if (!_hasClass(mainContainer, "disabled-onepage-scroll")) event.preventDefault();
+      if (!_hasClass(settings.mainContainer, "disabled-onepage-scroll")) event.preventDefault();
       moveUp(el);
     });
     document.addEventListener("swipeUp", function(event) {
-      if (!_hasClass(mainContainer, "disabled-onepage-scroll")) event.preventDefault();
+      if (!_hasClass(settings.mainContainer, "disabled-onepage-scroll")) event.preventDefault();
       moveDown(el);
     });
 
@@ -73,7 +72,7 @@ function onePageScroll(element, options) {
       var pagination = document.createElement("ul");
       pagination.setAttribute("class", "onepage-pagination");
 
-      mainContainer.appendChild(pagination);
+      settings.mainContainer.appendChild(pagination);
       pagination.innerHTML = paginationList;
       var posTop = (document.querySelector(".onepage-pagination").offsetHeight / 2) * -1;
       document.querySelector(".onepage-pagination").style.marginTop = posTop;
@@ -85,15 +84,15 @@ function onePageScroll(element, options) {
         next_index = next.dataset.index;
 
       _addClass(document.querySelector(settings.sectionContainer + "[data-index='" + init_index + "']"), "active");
-      _addClass(mainContainer, "viewing-page-" + init_index);
+      _addClass(settings.mainContainer, "viewing-page-" + init_index);
       if (settings.pagination == true) _addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + init_index + "']"), "active");
 
       if (next) {
         _addClass(next, "active");
         if (settings.pagination == true) _addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + init_index + "']"), "active");
 
-        mainContainer.className = mainContainer.className.replace(/\bviewing-page-\d.*?\b/g, '');
-        _addClass(mainContainer, "viewing-page-" + next_index);
+        settings.mainContainer.className = settings.mainContainer.className.replace(/\bviewing-page-\d.*?\b/g, '');
+        _addClass(settings.mainContainer, "viewing-page-" + next_index);
         if (history.replaceState && settings.updateURL == true) {
           var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (init_index);
           history.pushState({}, document.title, href);
@@ -104,7 +103,7 @@ function onePageScroll(element, options) {
 
     } else {
       _addClass(document.querySelector(settings.sectionContainer + "[data-index='1']"), "active");
-      _addClass(mainContainer, "viewing-page-1");
+      _addClass(settings.mainContainer, "viewing-page-1");
       if (settings.pagination == true) _addClass(document.querySelector(".onepage-pagination li a[data-index='1']"), "active");
     }
 
@@ -125,7 +124,7 @@ function onePageScroll(element, options) {
     var _mouseWheelHandler = function(event) {
       event.preventDefault();
       var delta = event.wheelDelta || -event.detail;
-      if (!_hasClass(mainContainer, "disabled-onepage-scroll")) _init_scroll(event, delta);
+      if (!_hasClass(settings.mainContainer, "disabled-onepage-scroll")) _init_scroll(event, delta);
     };
 
     document.addEventListener('mousewheel', _mouseWheelHandler);
@@ -143,7 +142,7 @@ function onePageScroll(element, options) {
     var _keydownHandler = function(e) {
       var tag = e.target.tagName.toLowerCase();
 
-      if (!_hasClass(mainContainer, "disabled-onepage-scroll")) {
+      if (!_hasClass(settings.mainContainer, "disabled-onepage-scroll")) {
         switch (e.which) {
           case 38:
             if (tag != 'input' && tag != 'textarea') moveUp(el);
@@ -314,9 +313,9 @@ function onePageScroll(element, options) {
 
   var _responsive = function() {
 
-    if (document.mainContainer.clientWidth < settings.responsiveFallback) {
+    if (document.settings.mainContainer.clientWidth < settings.responsiveFallback) {
 
-      _addClass(mainContainer, "disabled-onepage-scroll");
+      _addClass(settings.mainContainer, "disabled-onepage-scroll");
       document.removeEventListener('mousewheel', _mouseWheelHandler);
       document.removeEventListener('DOMMouseScroll', _mouseWheelHandler);
       _swipeEvents(el);
@@ -325,8 +324,8 @@ function onePageScroll(element, options) {
 
     } else {
 
-      if (_hasClass(mainContainer, "disabled-onepage-scroll")) {
-        _removeClass(mainContainer, "disabled-onepage-scroll");
+      if (_hasClass(settings.mainContainer, "disabled-onepage-scroll")) {
+        _removeClass(settings.mainContainer, "disabled-onepage-scroll");
         _scrollTo(document.documentElement, 0, 2000);
       }
 
@@ -334,11 +333,11 @@ function onePageScroll(element, options) {
 
       _swipeEvents(el);
       document.addEventListener("swipeDown", function(event) {
-        if (!_hasClass(mainContainer, "disabled-onepage-scroll")) event.preventDefault();
+        if (!_hasClass(settings.mainContainer, "disabled-onepage-scroll")) event.preventDefault();
         moveUp(el);
       });
       document.addEventListener("swipeUp", function(event) {
-        if (!_hasClass(mainContainer, "disabled-onepage-scroll")) event.preventDefault();
+        if (!_hasClass(settings.mainContainer, "disabled-onepage-scroll")) event.preventDefault();
         moveDown(el);
       });
 
@@ -410,8 +409,8 @@ function onePageScroll(element, options) {
       _addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + next_index + "']"), "active");
     }
 
-    mainContainer.className = mainContainer.className.replace(/\bviewing-page-\d.*?\b/g, '');
-    _addClass(mainContainer, "viewing-page-" + next_index);
+    settings.mainContainer.className = settings.mainContainer.className.replace(/\bviewing-page-\d.*?\b/g, '');
+    _addClass(settings.mainContainer, "viewing-page-" + next_index);
 
     if (history.replaceState && settings.updateURL == true) {
       var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (parseInt(index) + 1);
@@ -451,8 +450,8 @@ function onePageScroll(element, options) {
       _removeClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + index + "']"), "active");
       _addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + next_index + "']"), "active");
     }
-    mainContainer.className = mainContainer.className.replace(/\bviewing-page-\d.*?\b/g, '');
-    _addClass(mainContainer, "viewing-page-" + next_index);
+    settings.mainContainer.className = settings.mainContainer.className.replace(/\bviewing-page-\d.*?\b/g, '');
+    _addClass(settings.mainContainer, "viewing-page-" + next_index);
 
     if (history.replaceState && settings.updateURL == true) {
       var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (parseInt(index) - 1);
@@ -480,8 +479,8 @@ function onePageScroll(element, options) {
       _removeClass(document.querySelector(".onepage-pagination li a" + ".active"), "active");
       _addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + (page_index) + "']"), "active");
 
-      mainContainer.className = mainContainer.className.replace(/\bviewing-page-\d.*?\b/g, '');
-      _addClass(mainContainer, "viewing-page-" + next_index);
+      settings.mainContainer.className = settings.mainContainer.className.replace(/\bviewing-page-\d.*?\b/g, '');
+      _addClass(settings.mainContainer, "viewing-page-" + next_index);
 
       pos = ((page_index - 1) * 100) * -1;
 

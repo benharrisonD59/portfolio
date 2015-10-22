@@ -30,7 +30,6 @@ var App = React.createClass({
       animationTime: 500,
       pagination: true,
       updateURL: true,
-      beforeMove: function(index) {},
       afterMove: this.changeHeaderH2,
       loop: false,
       keyboard: true,
@@ -41,9 +40,8 @@ var App = React.createClass({
   },
 
   changeHeaderH2: function(panelName) {
-    var panelName = this.panelNames[document.querySelector("#app").className.replace("viewing-page-", "") - 1];
     this.setState({
-      sectionName: panelName
+      sectionName: this.panelNames[document.querySelector("#app").className.replace("viewing-page-", "") - 1]
     });
   },
 
