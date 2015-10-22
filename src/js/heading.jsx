@@ -5,7 +5,7 @@ var Glyphicon = require("react-bootstrap/lib/Glyphicon");
 var Heading = React.createClass({
 
   handleHexClick: function(moveToWhere) {
-    moveTo('.panelContainer', moveToWhere);
+    moveTo('#panelContainer', moveToWhere);
   },
 
   render: function() {

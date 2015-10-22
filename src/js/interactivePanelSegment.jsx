@@ -41,12 +41,12 @@ var Panel = React.createClass({
         <div className="contentsTable">
           {this.props.contentsTable.map(function(group){
             return (
-              <div className="contentsGroup">
+              <div key={group.title} className="contentsGroup">
                 <h2>{group.title}</h2>
                 <ul>
                   {group.sub.map(function(sub){
                     return (
-                      <li onClick={function(){this.changeContents(sub);}.bind(this)}>
+                      <li key={sub} onClick={function(){this.changeContents(sub);}.bind(this)}>
                         <p className={this.state.currentTitle == sub ? "orange" : ""}>{sub}</p>
                       </li>);
                   }.bind(this))}
