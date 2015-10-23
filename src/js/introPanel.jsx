@@ -1,5 +1,4 @@
 var React = require("react");
-var FitText= require("react-fittext");
 
 var Panel = React.createClass({
   render: function() {
@@ -11,15 +10,9 @@ var Panel = React.createClass({
               I always find introductions a little awkward. Especially since I have no idea who you are, nor do I know how much you know about me already. Decided to say that by the end of browsing this site, if I've done my job, you should know a great deal more than when you showed up!
             </p>
             <div className="introVerbs">
-              <FitText>
-                <p>Developer</p>
-              </FitText>
-              <FitText>
-                <p>Photographer</p>
-              </FitText>
-              <FitText>
-                <p>Representative</p>
-              </FitText>
+              <p>Developer</p>
+              <p>Photographer</p>
+              <p>Representative</p>
             </div>
           </div>
       </section>

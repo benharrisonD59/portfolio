@@ -2,7 +2,6 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-var ReactPropTypes = React.PropTypes;
 
 var pageScroller = React.createClass({
 
@@ -28,12 +27,13 @@ var pageScroller = React.createClass({
   },
 
   componentDidMount: function() {
-    this.loadSettings();
-    console.log(this.props.children[0]);
     this.init();
   },
 
-  loadSettings: function() {
+  init: function() {
+    /*-------------------------------------------*/
+    /*  Prepare Everything                       */
+    /*-------------------------------------------*/
     var defaults = {
       sectionContainer: "section",
       easing: "ease",
@@ -57,17 +57,12 @@ var pageScroller = React.createClass({
     this.settings.mainContainer = document.querySelector(this.settings.mainContainer);
     this.sections = document.querySelectorAll(this.settings.sectionContainer);
     this.total = document.querySelectorAll(this.settings.sectionContainer).length;
-  },
 
-  init: function() {
-    /*-------------------------------------------*/
-    /*  Prepare Everything                       */
-    /*-------------------------------------------*/
-    this._addClass(this.settings.panelContainer, "onepage-wrapper");
+    this.addClass(this.settings.panelContainer, "onepage-wrapper");
     this.settings.panelContainer.style.position = "relative";
 
     for (var i = 0; i < this.sections.length; i++) {
-      this._addClass(this.sections[i], "ops-section");
+      this.addClass(this.sections[i], "ops-section");
       this.sections[i].dataset.index = i + 1;
       this.topPos = this.topPos + 100;
 
@@ -78,13 +73,13 @@ var pageScroller = React.createClass({
       }
     }
 
-    this._swipeEvents(this.settings.panelContainer);
+    this.swipeEvents(this.settings.panelContainer);
     document.addEventListener("swipeDown", function(event) {
-      if (!this._hasClass(this.settings.mainContainer, "disabled-onepage-scroll")) event.preventDefault();
+      if (!this.hasClass(this.settings.mainContainer, "disabled-onepage-scroll")) event.preventDefault();
       moveUp(this.settings.panelContainer);
     });
     document.addEventListener("swipeUp", function(event) {
-      if (!this._hasClass(this.settings.mainContainer, "disabled-onepage-scroll")) event.preventDefault();
+      if (!this.hasClass(this.settings.mainContainer, "disabled-onepage-scroll")) event.preventDefault();
       moveDown(this.settings.panelContainer);
     });
 
@@ -101,70 +96,70 @@ var pageScroller = React.createClass({
     }
 
     if (window.location.hash != "" && window.location.hash != "#1") {
-      var init_index = window.location.hash.replace("#", ""),
-        next = document.querySelector(this.settings.sectionContainer + "[data-index='" + (init_index) + "']"),
-        next_index = next.dataset.index;
+      var initindex = window.location.hash.replace("#", ""),
+        next = document.querySelector(this.settings.sectionContainer + "[data-index='" + (initindex) + "']"),
+        nextindex = next.dataset.index;
 
-      this._addClass(document.querySelector(this.settings.sectionContainer + "[data-index='" + init_index + "']"), "active");
-      this._addClass(this.settings.mainContainer, "viewing-page-" + init_index);
-      if (this.settings.pagination == true) this._addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + init_index + "']"), "active");
+      this.addClass(document.querySelector(this.settings.sectionContainer + "[data-index='" + initindex + "']"), "active");
+      this.addClass(this.settings.mainContainer, "viewing-page-" + initindex);
+      if (this.settings.pagination == true) this.addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + initindex + "']"), "active");
 
       if (next) {
-        this._addClass(next, "active");
-        if (this.settings.pagination == true) this._addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + init_index + "']"), "active");
+        this.addClass(next, "active");
+        if (this.settings.pagination == true) this.addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + initindex + "']"), "active");
 
         this.settings.mainContainer.className = this.settings.mainContainer.className.replace(/\bviewing-page-\d.*?\b/g, '');
-        this._addClass(this.settings.mainContainer, "viewing-page-" + next_index);
+        this.addClass(this.settings.mainContainer, "viewing-page-" + nextindex);
         if (history.replace && this.settings.updateURL == true) {
-          var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (init_index);
+          var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (initindex);
           history.pushState({}, document.title, href);
         }
       }
-      var pos = ((init_index - 1) * 100) * -1;
-      this._transformPage(this.settings.panelContainer, this.settings, pos, init_index);
+      var pos = ((initindex - 1) * 100) * -1;
+      this.transformPage(this.settings.panelContainer, this.settings, pos, initindex);
 
     } else {
-      this._addClass(document.querySelector(this.settings.sectionContainer + "[data-index='1']"), "active");
-      this._addClass(this.settings.mainContainer, "viewing-page-1");
-      if (this.settings.pagination == true) this._addClass(document.querySelector(".onepage-pagination li a[data-index='1']"), "active");
+      this.addClass(document.querySelector(this.settings.sectionContainer + "[data-index='1']"), "active");
+      this.addClass(this.settings.mainContainer, "viewing-page-1");
+      if (this.settings.pagination == true) this.addClass(document.querySelector(".onepage-pagination li a[data-index='1']"), "active");
     }
 
-    var _paginationHandler = function() {
-      var page_index = window.dataset.index;
-      moveTo(this.settings.panelContainer, page_index);
+    var paginationHandler = function() {
+      var pageindex = window.dataset.index;
+      moveTo(this.settings.panelContainer, pageindex);
     }.bind(this);
 
 
     if (this.settings.pagination == true) {
-      var pagination_links = document.querySelectorAll(".onepage-pagination li a");
+      var paginationlinks = document.querySelectorAll(".onepage-pagination li a");
 
-      for (var i = 0; i < pagination_links.length; i++) {
-        pagination_links[i].addEventListener('click', _paginationHandler);
+      for (var i = 0; i < paginationlinks.length; i++) {
+        paginationlinks[i].addEventListener('click', paginationHandler);
       }
     }
 
-    var _mouseWheelHandler = function(event) {
+    var mouseWheelHandler = function(event) {
       event.preventDefault();
       var delta = event.wheelDelta || -event.detail;
-      if (!this._hasClass(this.settings.mainContainer, "disabled-onepage-scroll")) this._init_scroll(event, delta);
+      if (!this.hasClass(this.settings.mainContainer, "disabled-onepage-scroll")) this.initscroll(event, delta);
     }.bind(this);
 
-    document.addEventListener('mousewheel', _mouseWheelHandler);
-    document.addEventListener('DOMMouseScroll', _mouseWheelHandler);
+    document.addEventListener('mousewheel', mouseWheelHandler);
+    document.addEventListener('DOMMouseScroll', mouseWheelHandler);
 
 
     if (this.settings.responsiveFallback != false) {
       window.onresize = function() {
-        this._responsive();
+        this.responsive();
       };
 
-      this._responsive();
+      this.responsive();
     }
 
-    var _keydownHandler = function(e) {
+    var keydownHandler = function(e) {
       var tag = e.target.tagName.toLowerCase();
 
-      if (!this._hasClass(this.settings.mainContainer, "disabled-onepage-scroll")) {
+      if (!this.hasClass(this.settings.mainContainer, "disabled-onepage-scroll")) {
         switch (e.which) {
           case 38:
             if (tag != 'input' && tag != 'textarea') moveUp(this.settings.panelContainer);
@@ -180,7 +175,7 @@ var pageScroller = React.createClass({
     }.bind(this);
 
     if (this.settings.keyboard == true) {
-      document.onkeydown = _keydownHandler;
+      document.onkeydown = keydownHandler;
     }
     return false;
   },
@@ -191,7 +186,7 @@ var pageScroller = React.createClass({
   /*------------------------------------------------*/
   /*  Credit: Eike Send for the awesome swipe event */
   /*------------------------------------------------*/
-  _swipeEvents: function() {
+  swipeEvents: function() {
     var startX,
       startY;
 
@@ -241,11 +236,11 @@ var pageScroller = React.createClass({
   /*  Utility to add/remove class easily with javascript       */
   /*-----------------------------------------------------------*/
 
-  _trim: function(str) {
+  trim: function(str) {
     return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
   },
 
-  _hasClass: function(ele, cls) {
+  hasClass: function(ele, cls) {
     if (ele.className) {
       return ele.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
     } else {
@@ -253,24 +248,24 @@ var pageScroller = React.createClass({
     }
   },
 
-  _addClass: function(ele, cls) {
-    if (!this._hasClass(ele, cls)) ele.className += " " + cls;
-    ele.className = this._trim(ele.className);
+  addClass: function(ele, cls) {
+    if (!this.hasClass(ele, cls)) ele.className += " " + cls;
+    ele.className = this.trim(ele.className);
   },
 
-  _removeClass: function(ele, cls) {
-    if (this._hasClass(ele, cls)) {
+  removeClass: function(ele, cls) {
+    if (this.hasClass(ele, cls)) {
       var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
       ele.className = ele.className.replace(reg, ' ');
     }
-    ele.className = this._trim(ele.className);
+    ele.className = this.trim(ele.className);
   },
 
   /*-----------------------------------------------------------*/
   /*  Transtionend Normalizer by Modernizr                     */
   /*-----------------------------------------------------------*/
 
-  _whichTransitionEvent: function() {
+  whichTransitionEvent: function() {
     var t;
     var el = document.createElement('fakeelement');
     var transitions = {
@@ -291,7 +286,7 @@ var pageScroller = React.createClass({
   /*  Function to perform scroll to top animation              */
   /*-----------------------------------------------------------*/
 
-  _scrollTo: function(element, to, duration) {
+  scrollTo: function(element, to, duration) {
     if (duration < 0) return;
     var difference = to - element.scrollTop;
     var perTick = difference / duration * 10;
@@ -299,7 +294,7 @@ var pageScroller = React.createClass({
     setTimeout(function() {
       element.scrollTop = element.scrollTop + perTick;
       if (element.scrollTop == to) return;
-      this._scrollTo(element, to, duration - 10);
+      this.scrollTo(element, to, duration - 10);
     }, 10);
   },
 
@@ -308,18 +303,18 @@ var pageScroller = React.createClass({
   /*  Function to transform the page */
   /*---------------------------------*/
 
-  _transformPage: function(el2, settings, pos, index, next_el) {
-    if (typeof settings.beforeMove == 'function') settings.beforeMove(index, next_el);
+  transformPage: function(el2, settings, pos, index, nextel) {
+    if (typeof settings.beforeMove == 'function') settings.beforeMove(index, nextel);
 
     var transformCSS = "-webkit-transform: translate3d(0, " + pos + "%, 0); -webkit-transition: -webkit-transform " + settings.animationTime + "ms " + settings.easing + "; -moz-transform: translate3d(0, " + pos + "%, 0); -moz-transition: -moz-transform " + settings.animationTime + "ms " + settings.easing + "; -ms-transform: translate3d(0, " + pos + "%, 0); -ms-transition: -ms-transform " + settings.animationTime + "ms " + settings.easing + "; transform: translate3d(0, " + pos + "%, 0); transition: transform " + settings.animationTime + "ms " + settings.easing + ";";
 
     el2.style.cssText = transformCSS;
 
-    var transitionEnd = this._whichTransitionEvent();
+    var transitionEnd = this.whichTransitionEvent();
     el2.addEventListener(transitionEnd, endAnimation, false);
 
     function endAnimation() {
-      if (typeof settings.afterMove == 'function') settings.afterMove(index, next_el);
+      if (typeof settings.afterMove == 'function') settings.afterMove(index, nextel);
       el2.removeEventListener(transitionEnd, endAnimation);
     }
   },
@@ -328,38 +323,38 @@ var pageScroller = React.createClass({
   /*  Responsive Fallback trigger              */
   /*-------------------------------------------*/
 
-  _responsive: function() {
+  responsive: function() {
 
     if (document.settings.mainContainer.clientWidth < settings.responsiveFallback) {
 
-      this._addClass(settings.mainContainer, "disabled-onepage-scroll");
-      document.removeEventListener('mousewheel', _mouseWheelHandler);
-      document.removeEventListener('DOMMouseScroll', _mouseWheelHandler);
-      this._swipeEvents(this.settings.panelContainer);
+      this.addClass(settings.mainContainer, "disabled-onepage-scroll");
+      document.removeEventListener('mousewheel', mouseWheelHandler);
+      document.removeEventListener('DOMMouseScroll', mouseWheelHandler);
+      this.swipeEvents(this.settings.panelContainer);
       document.removeEventListener("swipeDown");
       document.removeEventListener("swipeUp");
 
     } else {
 
-      if (this._hasClass(settings.mainContainer, "disabled-onepage-scroll")) {
-        this._removeClass(settings.mainContainer, "disabled-onepage-scroll");
-        this._scrollTo(document.documentElement, 0, 2000);
+      if (this.hasClass(settings.mainContainer, "disabled-onepage-scroll")) {
+        this.removeClass(settings.mainContainer, "disabled-onepage-scroll");
+        this.scrollTo(document.documentElement, 0, 2000);
       }
 
 
 
-      this._swipeEvents(this.settings.panelContainer);
+      this.swipeEvents(this.settings.panelContainer);
       document.addEventListener("swipeDown", function(event) {
-        if (!this._hasClass(settings.mainContainer, "disabled-onepage-scroll")) event.preventDefault();
+        if (!this.hasClass(settings.mainContainer, "disabled-onepage-scroll")) event.preventDefault();
         moveUp(this.settings.panelContainer);
       });
       document.addEventListener("swipeUp", function(event) {
-        if (!this._hasClass(settings.mainContainer, "disabled-onepage-scroll")) event.preventDefault();
+        if (!this.hasClass(settings.mainContainer, "disabled-onepage-scroll")) event.preventDefault();
         moveDown(this.settings.panelContainer);
       });
 
-      document.addEventListener('mousewheel', _mouseWheelHandler);
-      document.addEventListener('DOMMouseScroll', _mouseWheelHandler);
+      document.addEventListener('mousewheel', mouseWheelHandler);
+      document.addEventListener('DOMMouseScroll', mouseWheelHandler);
 
     }
   },
@@ -368,7 +363,7 @@ var pageScroller = React.createClass({
   /*  Initialize scroll detection              */
   /*-------------------------------------------*/
 
-  _init_scroll: function(event, delta) {
+  initscroll: function(event, delta) {
     var deltaOfInterest = delta,
       timeNow = new Date().getTime();
 
@@ -417,23 +412,23 @@ var pageScroller = React.createClass({
     } else {
       pos = (index * 100) * -1;
     }
-    var next_index = next.dataset.index;
-    this._removeClass(current, "active");
-    this._addClass(next, "active");
+    var nextindex = next.dataset.index;
+    this.removeClass(current, "active");
+    this.addClass(next, "active");
 
     if (this.settings.pagination == true) {
-      this._removeClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + index + "']"), "active");
-      this._addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + next_index + "']"), "active");
+      this.removeClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + index + "']"), "active");
+      this.addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + nextindex + "']"), "active");
     }
 
     this.settings.mainContainer.className = this.settings.mainContainer.className.replace(/\bviewing-page-\d.*?\b/g, '');
-    this._addClass(this.settings.mainContainer, "viewing-page-" + next_index);
+    this.addClass(this.settings.mainContainer, "viewing-page-" + nextindex);
 
     if (history.replace && this.settings.updateURL == true) {
       var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (parseInt(index) + 1);
       history.pushState({}, document.title, href);
     }
-    this._transformPage(el3, this.settings, pos, next_index, next);
+    this.transformPage(el3, this.settings, pos, nextindex, next);
   },
 
   /*---------------------------------*/
@@ -459,53 +454,53 @@ var pageScroller = React.createClass({
     } else {
       pos = ((next.dataset.index - 1) * 100) * -1;
     }
-    var next_index = next.dataset.index;
-    this._removeClass(current, "active");
-    this._addClass(next, "active");
+    var nextindex = next.dataset.index;
+    this.removeClass(current, "active");
+    this.addClass(next, "active");
 
     if (this.settings.pagination == true) {
-      this._removeClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + index + "']"), "active");
-      this._addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + next_index + "']"), "active");
+      this.removeClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + index + "']"), "active");
+      this.addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + nextindex + "']"), "active");
     }
     this.settings.mainContainer.className = this.settings.mainContainer.className.replace(/\bviewing-page-\d.*?\b/g, '');
-    this._addClass(this.settings.mainContainer, "viewing-page-" + next_index);
+    this.addClass(this.settings.mainContainer, "viewing-page-" + nextindex);
 
     if (history.replace && this.settings.updateURL == true) {
       var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (parseInt(index) - 1);
       history.pushState({}, document.title, href);
     }
-    this._transformPage(el4, this.settings, pos, next_index, next);
+    this.transformPage(el4, this.settings, pos, nextindex, next);
   },
 
   /*-------------------------------------------*/
   /*  Function to move to specified section    */
   /*-------------------------------------------*/
 
-  moveTo: function(el5, page_index) {
+  moveTo: function(el5, pageindex) {
 
     if (typeof el5 == "string") el5 = document.querySelector(el5);
 
     var current = document.querySelector(this.settings.sectionContainer + ".active"),
-      next = document.querySelector(this.settings.sectionContainer + "[data-index='" + (page_index) + "']"),
+      next = document.querySelector(this.settings.sectionContainer + "[data-index='" + (pageindex) + "']"),
       pos;
 
     if (next) {
-      var next_index = next.dataset.index;
-      this._removeClass(current, "active");
-      this._addClass(next, "active");
-      this._removeClass(document.querySelector(".onepage-pagination li a" + ".active"), "active");
-      this._addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + (page_index) + "']"), "active");
+      var nextindex = next.dataset.index;
+      this.removeClass(current, "active");
+      this.addClass(next, "active");
+      this.removeClass(document.querySelector(".onepage-pagination li a" + ".active"), "active");
+      this.addClass(document.querySelector(".onepage-pagination li a" + "[data-index='" + (pageindex) + "']"), "active");
 
       this.settings.mainContainer.className = this.settings.mainContainer.className.replace(/\bviewing-page-\d.*?\b/g, '');
-      this._addClass(this.settings.mainContainer, "viewing-page-" + next_index);
+      this.addClass(this.settings.mainContainer, "viewing-page-" + nextindex);
 
-      pos = ((page_index - 1) * 100) * -1;
+      pos = ((pageindex - 1) * 100) * -1;
 
       if (history.replace && this.settings.updateURL == true) {
-        var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (parseInt(page_index));
+        var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (parseInt(pageindex));
         history.pushState({}, document.title, href);
       }
-      this._transformPage(el5, this.settings, pos, page_index, next);
+      this.transformPage(el5, this.settings, pos, pageindex, next);
     }
   },
   //---------------------------------

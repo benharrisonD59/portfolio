@@ -23,8 +23,8 @@ var Panel = React.createClass({
 
   getInitialState: function() {
     return ({
-      currentTitle: "",
-      currentContent: []
+      currentTitle: this.props.previewTitle,
+      currentContent: this.props.previewContent
     });
   },
 
